@@ -43,4 +43,12 @@ public class ClubeDao {
         return todosClubes;
     }
    
+        public void excluirClube(Clube c){
+            
+            em.getTransaction().begin();
+            Clube cAux = em.find(Clube.class, c.getIdclube()); //precisa pegar o objeto e vincular ao objeto do BD
+            em.remove(cAux); // como Caux esta vinculado ao contexto de persistencia entao posso excluir 
+            em.getTransaction().commit();
+            
+        }
 }

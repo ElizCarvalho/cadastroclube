@@ -23,6 +23,12 @@
                     <tr>
                         <td><c:out value="${clube.idclube}" /></td>
                         <td><c:out value="${clube.nome}" /></td>
+                        <td>
+                            <form action="ExcluirClube" method="POST">
+                                <input type="hidden" name="idExcluir" value="${clube.idclube}"/>
+                                <input type="submit" value="Excluir"/>
+                            </form>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
