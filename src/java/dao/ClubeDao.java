@@ -51,4 +51,15 @@ public class ClubeDao {
             em.getTransaction().commit();
             
         }
+        
+        public void alterarClube(Clube c){
+            
+            em.getTransaction().begin();
+            Clube cAux = em.find(Clube.class, c.getIdclube()); //precisa pegar o objeto e vincular ao objeto do BD
+            cAux.setNome((c.getNome()));
+            em.merge(cAux);
+            em.getTransaction().commit();
+            
+        }
+        
 }

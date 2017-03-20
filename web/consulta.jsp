@@ -29,6 +29,13 @@
                                 <input type="submit" value="Excluir"/>
                             </form>
                         </td>
+                        <td>
+                            <form action="alterar.jsp" method="POST">
+                                <input type="hidden" name="idalt" value="${clube.idclube}"/>
+                                <input type="hidden" name="nomealt" value="${clube.nome}"/>
+                                <input type="submit" value="Alterar"/>
+                            </form>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
